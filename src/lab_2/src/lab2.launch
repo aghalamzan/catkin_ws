@@ -1,0 +1,13 @@
+<launch>
+  <!-- a basic listener node -->
+  <node name="listener-1" pkg="rospy_tutorials" type="listener" />
+  <!-- pass args to the listener node -->
+  <node name="listener-2" pkg="rospy_tutorials" type="listener" args="-foo arg2" />
+  <!-- a respawn-able listener node -->
+  <node name="listener-3" pkg="rospy_tutorials" type="listener" respawn="true" />
+  <!-- start listener node in the 'wg1' namespace -->
+  <node ns="wg1" name="listener-wg1" pkg="rospy_tutorials" type="listener" respawn="true" />
+  <node pkg="rosservice" type="rosservice" name="spawn" args="call spawn --wait 5.5 5.5 0 'turtle2'"/>
+  
+</launch>
+
